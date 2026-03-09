@@ -33,13 +33,17 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,0.07);}
 .hero{min-height:100vh;display:grid;grid-template-columns:55% 45%;padding-top:72px;}
 .hero-left{display:flex;flex-direction:column;justify-content:center;padding:5rem 4rem 5rem 3rem;position:relative;}
 .hero-right{position:relative;overflow:hidden;background:var(--dark);}
-.hero-mosaic{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:3px;}
+.hero-mosaic{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:4px;}
 .mosaic-panel{position:relative;overflow:hidden;}
-.mosaic-panel-1{background:linear-gradient(135deg,#2a3a4a 0%,#3d2b1f 100%);}
-.mosaic-panel-2{background:linear-gradient(135deg,#1a2235 0%,#4a3728 100%);}
-.mosaic-panel-3{background:linear-gradient(135deg,#3d2b1f 0%,#5c4a32 100%);}
-.mosaic-panel-4{background:linear-gradient(135deg,#4a3728 0%,#1c1a17 100%);}
-.mosaic-panel::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(184,146,42,0.05) 0,rgba(184,146,42,0.05) 1px,transparent 1px,transparent 14px);}
+.mosaic-panel-1{background:linear-gradient(160deg,#0f1923 0%,#b8922a 100%);}
+.mosaic-panel-2{background:linear-gradient(200deg,#1c1a17 0%,#3d2b1f 60%,#5c4a32 100%);}
+.mosaic-panel-3{background:linear-gradient(140deg,#2a1f12 0%,#d4ae5a 100%);}
+.mosaic-panel-4{background:linear-gradient(180deg,#0a0f14 0%,#1a2235 50%,#2d3d50 100%);}
+.mosaic-panel-1::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-60deg,rgba(255,255,255,0.03) 0,rgba(255,255,255,0.03) 1px,transparent 1px,transparent 18px);}
+.mosaic-panel-2::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,rgba(184,146,42,0.18) 0%,transparent 60%);}
+.mosaic-panel-3::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(30deg,rgba(184,146,42,0.06) 0,rgba(184,146,42,0.06) 1px,transparent 1px,transparent 12px);}
+.mosaic-panel-4::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 80%,rgba(212,174,90,0.12) 0%,transparent 55%);}
+.mosaic-panel::after{content:'';position:absolute;inset:0;background:inherit;opacity:0;transition:opacity 0.6s;}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,var(--warm-white) 0%,transparent 12%);z-index:1;pointer-events:none;}
 .hero-tagline{position:absolute;bottom:2.5rem;right:2.5rem;z-index:2;text-align:right;}
 .hero-tagline p{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic;color:rgba(255,255,255,0.82);line-height:1.45;max-width:260px;}
@@ -182,8 +186,9 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);paddin
 .footer-bottom{max-width:1200px;margin:2rem auto 0;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;font-size:0.7rem;color:rgba(255,255,255,0.22);flex-wrap:wrap;gap:0.5rem;}
 
 /* ANIMATIONS */
-.fade-up{opacity:0;transform:translateY(26px);transition:opacity 0.7s ease,transform 0.7s ease;}
-.fade-up.visible{opacity:1;transform:translateY(0);}
+.fade-up{opacity:1;transform:translateY(0);transition:opacity 0.7s ease,transform 0.7s ease;}
+.fade-up.animate{opacity:0;transform:translateY(26px);}
+.fade-up.animate.visible{opacity:1;transform:translateY(0);}
 .fd1{transition-delay:0.1s;}.fd2{transition-delay:0.2s;}.fd3{transition-delay:0.3s;}.fd4{transition-delay:0.4s;}
 
 /* RESPONSIVE */
@@ -217,6 +222,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);paddin
   </a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
+    <li><a href="team.html">Team</a></li>
     <li><a href="#founders">Team</a></li>
     <li><a href="#strategy">Strategy</a></li>
     <li><a href="#portfolio">Portfolio</a></li>
@@ -255,7 +261,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);paddin
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-tagline">
-      <p>"Two friends. One conviction. Built to last."</p>
+      <p>"Built on family. Grown through partnership. Here for the long term."</p>
       <span>Andrew &amp; Ankit, Co-Founders</span>
     </div>
   </div>
@@ -287,18 +293,21 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);paddin
 <section id="about">
   <div class="wrap">
     <p class="section-label fade-up">Our Story</p>
-    <h2 class="section-title fade-up">Started by two college friends.<br/><em>Built to last generations.</em></h2>
+    <h2 class="section-title fade-up">Built on family.<br/><em>Grown through partnership.</em></h2>
     <div class="about-grid">
       <div>
         <p class="section-body fade-up">
-          Sandalwood West began as a passion project between two college friends — Andrew and Ankit — 
-          who spent years searching together for the right businesses before making their first acquisition. 
-          Since then, the platform has grown to include partners with expertise across tech, CPG, and marketing.
+          Sandalwood West was founded as a vehicle to grow a family business and to build 
+          partnerships with people who share our values. Over more than a decade, Ankit has 
+          sourced, structured, and operated the firm's acquisitions — from coastal California 
+          motels to industrial laundry operations in Calgary. The platform has grown to include 
+          partners with deep expertise across CPG, manufacturing, technology, and international trade.
         </p>
         <p class="section-body fade-up" style="margin-top:1rem;">
-          We are a self-funded small family office. We are open to considering investor funding if the 
-          values and proposition align — but at this moment, we have not accepted outside funding. Every 
-          deal we've done has been built on our own conviction and capital.
+          Andrew and Ankit aligned naturally over years — sharing the same long-term goals 
+          before becoming business partners. The family office at the core of Sandalwood West 
+          is owned by Ankit and his cousin Jay. We are self-funded and have not accepted 
+          outside capital. Every deal has been built on our own conviction and values.
         </p>
         <span class="about-badge fade-up">Self-Funded Family Office</span>
       </div>
@@ -559,7 +568,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);paddin
         </p>
         <div class="contact-info-item fade-up">
           <div class="contact-icon">📧</div>
-          <span class="contact-icon-text"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e48c8188888ba497858a808588938b8b8093819790ca878b89">[email&#160;protected]</a></span>
+          <span class="contact-icon-text"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="deb6bbb2b2b19eadbfb0babfb2a9b1b1baa9bbadaaf0bdb1b3">[email&#160;protected]</a></span>
         </div>
         <div class="contact-info-item fade-up fd1">
           <div class="contact-icon">🌐</div>
@@ -630,7 +639,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);paddin
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
 }, {threshold: 0.07});
