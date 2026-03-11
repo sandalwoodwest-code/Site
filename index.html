@@ -555,23 +555,21 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);paddin
           <div class="contact-icon">📧</div>
           <span class="contact-icon-text"><a href="mailto:Maria@sandalwoodwest.com">Maria@sandalwoodwest.com</a></div>
         </div>
-      <div class="cform fade-up">
-        <div class="form-row">
-          <div class="ff"><label>First Name</label><input type="text" placeholder="John"/></div>
-          <div class="ff"><label>Last Name</label><input type="text" placeholder="Smith"/></div>
-        </div>
-        <div class="ff"><label>Email Address</label><input type="email" placeholder="john@example.com"/></div>
-        <div class="ff">
-          <label>I am a...</label>
-          <select>
-            <option>Business Owner Exploring a Sale</option>
-            <option>Business Broker / M&amp;A Advisor</option>
-            <option>Potential Capital Partner</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div class="ff"><label>Message</label><textarea rows="5" placeholder="Tell us about your business or how we might work together..."></textarea></div>
-        <button type="button" class="btn" style="align-self:flex-start;">Send Message</button>
+      <form
+  action="https://formspree.io/f/mbdzordw"
+  method="POST"
+>
+  <label>
+    Your email:
+    <input type="email" name="email">
+  </label>
+  <label>
+    Your message:
+    <textarea name="message"></textarea>
+  </label>
+  <!-- your other form fields go here -->
+  <button type="submit">Send</button>
+</form>
         <p class="form-note">We typically respond within 48 hours. All conversations are kept confidential.</p>
       </div>
     </div>
